@@ -25,7 +25,13 @@ export class BooksService {
     return `This action updates a #${id} book`;
   }
 
-  remove(id: number) {
-    return `This action removes a #${id} book`;
+  async findOneById(id: string): Promise<Book | null> {
+    const foundBook = await this.bookModel.findOne({ id }).exec();
+    return foundBook;
+  }
+
+  async removeById(id: string): Promise<Book | null> {
+    const deletedBook = await this.bookModel.findOneAndDelete({ id }).exec();
+    return deletedBook;
   }
 }
