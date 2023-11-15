@@ -17,12 +17,18 @@ export class BooksService {
     return this.bookModel.find().exec();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} book`;
-  }
+  async update(id: string, updateBookDto: UpdateBookDto): Promise<Book | null> {
+    const foundBook = await this.findOneById(id);
 
-  update(id: number, updateBookDto: UpdateBookDto) {
-    return `This action updates a #${id} book`;
+    if (!foundBook) {
+      return null; // Обробка випадку, коли об'єкт не знайдено
+    }
+
+    // Оновлюємо знайдений об'єкт
+    foundBook.set(updateBookDto);
+    const updatedBook = await foundBook.save();
+
+    return updatedBook;
   }
 
   async findOneById(id: string): Promise<Book | null> {
