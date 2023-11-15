@@ -87,6 +87,10 @@ $ nest g res books
 $ npm install --save mongoose
 ```
 
+### Deploy Nest js
+https://levelup.gitconnected.com/deploying-a-nestjs-app-for-free-on-cyclic-907c780f7f35
+or
+https://hackernoon.com/the-complete-guide-to-deploying-nestjs-application-on-render
 
 
 ## Mongoose base sample

@@ -8,7 +8,7 @@ async function bootstrap() {
 
   // Налаштування CORS
   const corsOptions: CorsOptions = {
-    origin: ["http://localhost:3000", "https://book-library-liard-one.vercel.app/"], // Дозволений домен
+    origin: ["http://localhost:3000", "https://book-library-serhii.vercel.app/"], // Дозволений домен
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE', // Дозволені методи
     credentials: true, // Передача кредитів (якщо потрібно)
     optionsSuccessStatus: 200 // Дозволений статус відповіді для методів OPTIONS
